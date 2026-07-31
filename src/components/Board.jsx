@@ -1,47 +1,69 @@
-import { useTickets } from "../hooks/useTickets";
+import { useCallback } from "react";
+import { useTickets, useUpdateTicket } from "../hooks/useTickets";
 import Column from "./Column";
 
-function Board() {
-  const { data: tickets = [], isLoading, isError } = useTickets();
+function Board({ searchQuery = "" }) {
+  const {
+    data: tickets = [],
+    isLoading,
+    isError
+  } = useTickets();
 
-  if (isLoading) {
-    return <div>Loading Tickets...</div>;
-  }
+  const updateTicket = useUpdateTicket();
 
-  if (isError) {
-    return <div>Something went wrong!</div>;
-  }
-
-  const todoTickets = tickets.filter(
-    (ticket) =>
-      ticket.status?.toLowerCase().replace(" ", "_") === "todo"
+  const handleStatusChange = useCallback(
+    (id, status) => {
+      updateTicket.mutate({
+        id,
+        status
+      });
+    },
+    [updateTicket]
   );
 
-  const progressTickets = tickets.filter(
-    (ticket) =>
-      ticket.status?.toLowerCase().replace(" ", "_") === "in_progress"
+  if (isLoading) return <p>Loading Tickets...</p>;
+  if (isError) return <p>Something went wrong!</p>;
+
+  // Normalize status helper
+  const normalizeStatus = (status) =>
+    status?.toString().toLowerCase().replace(/[\s_-]+/g, "") || "";
+
+  // Apply search filtering
+  const filteredTickets = tickets.filter((ticket) =>
+    ticket.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    ticket.description?.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const doneTickets = tickets.filter(
-    (ticket) =>
-      ticket.status?.toLowerCase().replace(" ", "_") === "done"
+  const todoTickets = filteredTickets.filter(
+    (ticket) => normalizeStatus(ticket.status) === "todo"
+  );
+
+  const progressTickets = filteredTickets.filter(
+    (ticket) => normalizeStatus(ticket.status) === "inprogress"
+  );
+
+  const doneTickets = filteredTickets.filter(
+    (ticket) => normalizeStatus(ticket.status) === "done"
   );
 
   return (
-    <div>
+    <div className="board">
       <Column
         title="To Do"
         tickets={todoTickets}
+        onStatusChange={handleStatusChange}
       />
 
       <Column
         title="In Progress"
         tickets={progressTickets}
+        onStatusChange={handleStatusChange}
       />
 
       <Column
         title="Done"
         tickets={doneTickets}
+        onStatusChange={handleStatusChange}
       />
     </div>
   );

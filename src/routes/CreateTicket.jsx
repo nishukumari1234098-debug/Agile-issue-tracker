@@ -1,19 +1,23 @@
+import Navbar from "../components/Navbar";
 import CreateTicketForm from "../components/CreateTicketForm";
 import "../styles/routes.css";
 
 function CreateTicket() {
   return (
-    <div className="create-ticket-page">
+    <>
+      <Navbar />
 
-      <h1>Create New Ticket</h1>
+      <div className="create-ticket-wrapper">
+        <div className="create-ticket-card">
+          <div className="form-header">
+            <h2>Create New Issue</h2>
+            <p>Fill out the form below to add a new task to the backlog.</p>
+          </div>
 
-      <p className="page-description">
-        Fill in the details below to create a new issue.
-      </p>
-
-      <CreateTicketForm />
-
-    </div>
+          <CreateTicketForm />
+        </div>
+      </div>
+    </>
   );
 }
 
