@@ -27,7 +27,7 @@ function TicketCard({ ticket }) {
       <div className="ticket-footer">
 
         <span className="assignee">
-          👤 {ticket.assignee}
+          👤 {ticket.assignee.name}
         </span>
 
         <span className="status">

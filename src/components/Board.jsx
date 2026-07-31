@@ -5,28 +5,30 @@ function Board() {
   const { data: tickets = [], isLoading, isError } = useTickets();
 
   if (isLoading) {
-    return <h2 className="loading">Loading Tickets...</h2>;
+    return <div>Loading Tickets...</div>;
   }
 
   if (isError) {
-    return <h2 className="loading">Something went wrong!</h2>;
+    return <div>Something went wrong!</div>;
   }
 
   const todoTickets = tickets.filter(
-    (ticket) => ticket.status === "Todo"
+    (ticket) =>
+      ticket.status?.toLowerCase().replace(" ", "_") === "todo"
   );
 
   const progressTickets = tickets.filter(
-    (ticket) => ticket.status === "In Progress"
+    (ticket) =>
+      ticket.status?.toLowerCase().replace(" ", "_") === "in_progress"
   );
 
   const doneTickets = tickets.filter(
-    (ticket) => ticket.status === "Done"
+    (ticket) =>
+      ticket.status?.toLowerCase().replace(" ", "_") === "done"
   );
 
   return (
-    <div className="board">
-
+    <div>
       <Column
         title="To Do"
         tickets={todoTickets}
@@ -41,7 +43,6 @@ function Board() {
         title="Done"
         tickets={doneTickets}
       />
-
     </div>
   );
 }

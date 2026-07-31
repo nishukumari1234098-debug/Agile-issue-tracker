@@ -4,20 +4,22 @@ function DashboardStats() {
   const { data: tickets = [] } = useTickets();
 
   const todo = tickets.filter(
-    (ticket) => ticket.status === "Todo"
+    (ticket) =>
+      ticket.status?.toLowerCase().replace(" ", "_") === "todo"
   ).length;
 
   const progress = tickets.filter(
-    (ticket) => ticket.status === "In Progress"
+    (ticket) =>
+      ticket.status?.toLowerCase().replace(" ", "_") === "in_progress"
   ).length;
 
   const done = tickets.filter(
-    (ticket) => ticket.status === "Done"
+    (ticket) =>
+      ticket.status?.toLowerCase().replace(" ", "_") === "done"
   ).length;
 
   return (
     <div className="stats-container">
-
       <div className="stat-card">
         <h4>Total Tickets</h4>
         <h2>{tickets.length}</h2>
@@ -37,7 +39,6 @@ function DashboardStats() {
         <h4>Done</h4>
         <h2>{done}</h2>
       </div>
-
     </div>
   );
 }

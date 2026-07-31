@@ -3,7 +3,6 @@ import TicketCard from "./TicketCard";
 function Column({ title, tickets }) {
   return (
     <div className="column">
-
       <div className="column-header">
         <h2>{title}</h2>
         <span>{tickets.length}</span>
@@ -23,7 +22,6 @@ function Column({ title, tickets }) {
           ))
         )}
       </div>
-
     </div>
   );
 }
