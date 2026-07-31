@@ -1,0 +1,97 @@
+/* ==========================
+          HOME
+========================== */
+
+.home-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.welcome-section h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.welcome-section p {
+  color: #94a3b8;
+  font-size: 18px;
+}
+
+.day1-card {
+  width: 700px;
+  max-width: 100%;
+  margin: auto;
+  background: #1e293b;
+  border-radius: 15px;
+  padding: 30px;
+  border: 1px solid #334155;
+}
+
+.day1-card h2 {
+  margin-bottom: 20px;
+  color: #7c5cff;
+}
+
+.day1-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.day1-card li {
+  color: #e2e8f0;
+  font-size: 17px;
+}
+
+/* ==========================
+      CREATE TICKET
+========================== */
+
+.create-ticket-page {
+  width: 600px;
+  max-width: 95%;
+  margin: 50px auto;
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.create-ticket-page h1 {
+  margin-bottom: 25px;
+}
+
+.ticket-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ticket-form input,
+.ticket-form textarea,
+.ticket-form select {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #111827;
+  color: white;
+}
+
+.ticket-form button {
+  background: #7c5cff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.ticket-form button:hover {
+  background: #6848ff;
+}

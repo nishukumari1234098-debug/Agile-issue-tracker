@@ -1,0 +1,68 @@
+{
+  "tickets": [
+    {
+      "id": 1,
+      "title": "Design Login Page",
+      "description": "Create responsive login page using React.",
+      "priority": "High",
+      "status": "Todo",
+      "assignee": "Nisha"
+    },
+    {
+      "id": 2,
+      "title": "Setup React Router",
+      "description": "Configure routing for all pages.",
+      "priority": "Medium",
+      "status": "Todo",
+      "assignee": "Rahul"
+    },
+    {
+      "id": 3,
+      "title": "Create Navbar",
+      "description": "Build responsive navigation bar.",
+      "priority": "Low",
+      "status": "In Progress",
+      "assignee": "Aman"
+    },
+    {
+      "id": 4,
+      "title": "React Query Integration",
+      "description": "Fetch tickets using React Query.",
+      "priority": "High",
+      "status": "In Progress",
+      "assignee": "Priya"
+    },
+    {
+      "id": 5,
+      "title": "Dark Theme UI",
+      "description": "Apply dark mode styling.",
+      "priority": "Medium",
+      "status": "Done",
+      "assignee": "Karan"
+    },
+    {
+      "id": 6,
+      "title": "Dashboard Cards",
+      "description": "Show sprint statistics cards.",
+      "priority": "Low",
+      "status": "Done",
+      "assignee": "Nisha"
+    },
+    {
+      "id": 7,
+      "title": "Search Tickets",
+      "description": "Implement search functionality.",
+      "priority": "High",
+      "status": "Todo",
+      "assignee": "Aditi"
+    },
+    {
+      "id": 8,
+      "title": "Create Ticket Form",
+      "description": "Add new ticket using React Router Form.",
+      "priority": "Medium",
+      "status": "Todo",
+      "assignee": "Rohit"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #0f172a;
+  --card-color: #1e293b;
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --text: #ffffff;
+  --text-light: #cbd5e1;
+  --border: #334155;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-color);
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
