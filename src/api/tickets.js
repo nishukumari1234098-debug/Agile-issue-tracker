@@ -1,5 +1,4 @@
-const BASE_URL = "https://jira-clone-3.onrender.com/tickets";
-
+const BASE_URL = "https://agile-issue-tracker-0d91.onrender.com/tickets";
 
 // Get All Tickets
 export const getTickets = async () => {
